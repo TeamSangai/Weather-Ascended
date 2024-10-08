@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "weather-ascended",
+	"version": "${version}",
+	"name": "Weather Ascended",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://mrgeoves.net/",
+		"sources": "https://github.com/mrgeoves/weather-ascended"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/weather-ascended/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"mrgeoves.weatherascended.WeatherAscended"
+		],
+		"fabric-datagen": [
+			"mrgeoves.weatherascended.WeatherAscendedDataGenerator"
+		],
+		"client": [
+			"mrgeoves.weatherascended.WeatherAscendedClient"
+		]
+	},
+	"mixins": [
+		"weather-ascended.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
