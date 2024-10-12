@@ -28,7 +28,7 @@ public class AscendedWeatherWorld extends ServerWorld {
 
     public AscendedWeatherWorld(MinecraftServer server, Executor workerExecutor, LevelStorage.Session session, ServerWorldProperties properties, RegistryKey<World> worldKey, DimensionOptions dimensionOptions, WorldGenerationProgressListener worldGenerationProgressListener, boolean debugWorld, long seed, List<SpecialSpawner> spawners, boolean shouldTickTime, @Nullable RandomSequencesState randomSequencesState, ServerWorldProperties worldProperties) {
         super(server, workerExecutor, session, properties, worldKey, dimensionOptions, worldGenerationProgressListener, debugWorld, seed, spawners, shouldTickTime, randomSequencesState);
-        this.worldProperties = worldProperties;
+        this.worldProperties = WethAscendedWorldProperties;
     }
     private final ServerWorldProperties worldProperties;
     public static final IntProvider CLEAR_WEATHER_DURATION_PROVIDER = UniformIntProvider.create(12000, 180000);
@@ -38,9 +38,7 @@ public class AscendedWeatherWorld extends ServerWorld {
     public static final IntProvider CLEAR_MONSOON_WEATHER_DURATION_PROVIDER = UniformIntProvider.create(12000, 180000);
     public static final IntProvider MONSOON_WEATHER_DURATION_PROVIDER = UniformIntProvider.create(6000, 18000);
 
-    public interface WorldProperties {
-        boolean isMonsooning();
-    }
+
     public void setWeather(int clearDuration, int rainDuration, boolean raining, boolean thundering, boolean monsooning) {
         this.worldProperties.setClearWeatherTime(clearDuration);
         this.worldProperties.setRainTime(rainDuration);
