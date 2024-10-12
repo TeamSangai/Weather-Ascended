@@ -39,7 +39,7 @@ public class AscendedWeatherWorld extends ServerWorld {
     public static final IntProvider MONSOON_WEATHER_DURATION_PROVIDER = UniformIntProvider.create(6000, 18000);
 
     public interface WorldProperties {
-        boolean isMonsooning()
+        boolean isMonsooning();
     }
     public void setWeather(int clearDuration, int rainDuration, boolean raining, boolean thundering, boolean monsooning) {
         this.worldProperties.setClearWeatherTime(clearDuration);
@@ -68,13 +68,15 @@ public class AscendedWeatherWorld extends ServerWorld {
                 int i = this.worldProperties.getClearWeatherTime();
                 int j = this.worldProperties.getThunderTime();
                 int k = this.worldProperties.getRainTime();
-                int l = this.worldProperties.
+                int l = this.worldProperties.is
                 boolean bl2 = this.properties.isThundering();
                 boolean bl3 = this.properties.isRaining();
+                boolean bl4 = this.properties.isMonsooning();
                 if (i > 0) {
                     --i;
                     j = bl2 ? 0 : 1;
                     k = bl3 ? 0 : 1;
+                    l = bl4
                     bl2 = false;
                     bl3 = false;
                 } else {
